@@ -1,11 +1,14 @@
 <template>
   <div>
     <drag-and-drop @set=setCsvData></drag-and-drop>
+
     <db-table-info :column-names="baseColumnNames"></db-table-info>
     <div v-show="this.baseColumnNames.length > 0">
       <textarea v-model="sql" class="textarea is-info" placeholder="select * from hoge"></textarea>
       <button class="button is-fullwidth is-info" @click="runSelectQuery">Run Query</button>
     </div>
+    <error-message :message=errorMessage></error-message>
+
     <div class="columns is-mobile is-centered">
       <div class="column is-half">
         <result-table :column-names="columnNames" :result="result"></result-table>
@@ -21,12 +24,14 @@ import { Database } from "../sql"
 import ResultTable from "~/components/ResultTable"
 import DbTableInfo from "~/components/DbTableInfo"
 import DragAndDrop from "~/components/DragAndDrop"
+import ErrorMessage from "~/components/ErrorMessage"
 
 @Component({
   components: {
     ResultTable,
     DbTableInfo,
-    DragAndDrop
+    DragAndDrop,
+    ErrorMessage
   }
 })
 export default class TopPage extends Vue {
@@ -36,8 +41,9 @@ export default class TopPage extends Vue {
   baseColumnNames: string[] = [];
   db: any = new Database();
   sql: string = '';
+  errorMessage: string = ''
 
-  createTable (values) {
+  createTable (values: string[]) {
     const columnsString = this.columnNames.map((name) => {
       return `${name} char`;
     }).join(',');
@@ -62,11 +68,12 @@ export default class TopPage extends Vue {
 
   runSelectQuery () {
     try {
+      this.errorMessage = null
       const result = this.db.exec(this.sql)[0];
       this.columnNames = result.columns;
       this.result = result.values;
     } catch (e) {
-      console.log(e);
+      this.errorMessage = e.message
     }
   }
 }
