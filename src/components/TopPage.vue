@@ -58,12 +58,10 @@ export default class TopPage extends Vue {
     this.createTable(this.columnNames);
     this.result = csvData
 
-    const sql = csvData.map((row) => {
-      return `insert into hoge values(${
-        row.map(v => `"${v}"`).join(',')
-      });`
-    }).join('')
-    this.db.run(sql);
+    const query = `insert into hoge values(${this.columnNames.map(_ => '?')});`
+    csvData.map((row) => {
+      this.db.run(query, row);
+    })
   }
 
   runSelectQuery () {
