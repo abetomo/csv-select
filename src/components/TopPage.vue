@@ -20,7 +20,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Component, Prop } from "vue-property-decorator";
-import { Database } from "../sql"
+import { Database } from "sql.js"
 import ResultTable from "~/components/ResultTable"
 import DbTableInfo from "~/components/DbTableInfo"
 import DragAndDrop from "~/components/DragAndDrop"
