@@ -11,6 +11,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Component } from "vue-property-decorator";
+import parse from "csv-parse/lib/sync"
 
 @Component
 export default class DragAndDrop extends Vue {
@@ -18,9 +19,7 @@ export default class DragAndDrop extends Vue {
     const files = event.dataTransfer.files;
     const reader = new FileReader();
     reader.onload = (e) => {
-      const rows = e.target.result.split('\n').map((line) => {
-        return line.split(',');
-      });
+      const rows = parse(e.target.result, { skip_empty_lines: true })
       const columnLength = rows[0].length;
       this.$emit('set', rows.filter(row => row.length === columnLength))
     };
