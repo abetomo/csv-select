@@ -1,16 +1,17 @@
 <template>
-  <table class="table is-hoverable is-fullwidth">
-    <thead>
-      <tr>
-        <th v-for="columnName in columnNames">{{ columnName }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="rows in result">
-        <td v-for="str in rows">{{ str }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="scroll">
+    <table class="table is-hoverable is-fullwidth scroll">
+      <thead>
+        <tr>
+          <th v-for="columnName in columnNames">{{ columnName }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="rows in result">
+          <td v-for="str in rows">{{ str }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
