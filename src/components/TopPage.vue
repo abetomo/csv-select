@@ -13,11 +13,7 @@
     </div>
     <error-message :message=errorMessage></error-message>
 
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half">
-        <result-table :column-names="columnNames" :result="result"></result-table>
-      </div>
-    </div>
+    <result-table :column-names="columnNames" :result="result"></result-table>
   </div>
 </template>
 

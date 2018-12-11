@@ -1,5 +1,5 @@
 <template>
-  <table class="table is-hoverable">
+  <table class="table is-hoverable is-fullwidth">
     <thead>
       <tr>
         <th v-for="columnName in columnNames">{{ columnName }}</th>
