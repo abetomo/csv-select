@@ -5,6 +5,12 @@
     @dragover.prevent
     @drop.prevent="onDrop">
     <p>Drag and drop file</p>
+    <div class="modal" :class="{'is-active': loading }">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        Loading...
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,15 +21,21 @@ import parse from "csv-parse/lib/sync"
 
 @Component
 export default class DragAndDrop extends Vue {
+  loading: boolean = false
+
   onDrop (event) {
-    const files = event.dataTransfer.files;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const rows = parse(e.target.result, { skip_empty_lines: true })
-      const columnLength = rows[0].length;
-      this.$emit('set', rows.filter(row => row.length === columnLength))
-    };
-    reader.readAsText(files[0]);
+    this.loading = true
+    const files = event.dataTransfer.files
+    setTimeout(() => {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        const rows = parse(e.target.result, { skip_empty_lines: true })
+        const columnLength = rows[0].length
+        this.$emit('set', rows.filter(row => row.length === columnLength))
+        this.loading = false
+      };
+      reader.readAsText(files[0])
+    }, 200)
   }
 }
 </script>
