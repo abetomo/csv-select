@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- 10
+before_deploy:
+- npm run pkg
+deploy:
+  provider: releases
+  api_key:
+    secure: T/tMwHhMdZzecJvjpD6Py95hoXVqBcJuF70Egx2HpICjJkkHxK3v2Rwkt59+YB7eEa/kqDtETqQ+hT6wuiytDp7C/Wnf3djzA8cYgpIQfBAF12r/xBWSEemvSL6x/D/ds0esaVgAEPFjXhdEcfEUN6sRO14627CTpjiYum2uSeVr3sewIuGSyjLiPH4ltPHkZnIwiMqO9WRbaHgAGZbu+koANj+r7ySCUVHMa55xpOSu4Gz6l7SYCksfOQO5YFnm8BJfpHBHulPCbkHsN0NR9myeY8Ay2cXhyG1yWxydRTaL36/w+2/7xNw9HEflCHLevizytj+p14xN7u3AAnY+4NNOiWQkcQeDOXuhLV7cXM66foQx4TXNV4JxxTS+9vHmx24Pz42vWpT91oqST1nySnh5iXpiwU6B77SaPxeRyDkOFq0Xu+cbaTFB1yNKYE0TmZOD7n7cSrNHWMfs6h0UkSErXlocMlLkJi52Pgvv2bGBrsUDumgbY6xVHBRUZ4KfXzbqrUhBbElvc+JyI446txqMPZENfd66wyvPMedDxbXHdsMs+uXipjrB1DZsmM43xwaoDCOH4QN393/lfQ4AKg4kJ07kuhNqz3sTC07211jMf8EJ4FdAHTHhU6eWCNmEEBzjYRWZ9A8RKNlm7rCxL1pNABc5N6BENVnsltn9CF0=
+  file_glob: true
+  file: build/Release/csv-select-*
+  skip_cleanup: true
+  on:
+    tags: true
