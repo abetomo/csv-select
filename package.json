@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "dev": "node --max-old-space-size=4096 ./index.js",
+    "dev": "node --max-old-space-size=4096 ./scripts/dev.js",
+    "build": "NODE_ENV=production node --max-old-space-size=4096 ./scripts/build.js",
+    "launch": "node ./scripts/carlo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "abetomo",
@@ -28,5 +30,5 @@
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.17"
   },
-  "bin": "index.js"
+  "bin": "./scripts/carlo.js"
 }
