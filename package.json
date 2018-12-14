@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production node --max-old-space-size=4096 ./scripts/build.js",
     "launch": "node ./scripts/carlo.js",
     "pkg": "npm run build && pkg .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Info: no test specified\" && exit 0"
   },
   "author": "abetomo",
   "license": "MIT",
