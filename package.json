@@ -6,29 +6,36 @@
     "dev": "node --max-old-space-size=4096 ./scripts/dev.js",
     "build": "NODE_ENV=production node --max-old-space-size=4096 ./scripts/build.js",
     "launch": "node ./scripts/carlo.js",
+    "pkg": "npm run build && pkg .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "abetomo",
   "license": "MIT",
-  "dependencies": {
-    "carlo": "^0.9.41",
-    "csv-parse": "^4.1.0",
-    "sql.js": "^0.5.0",
-    "vue": "^2.5.17",
-    "vue-hot-reload-api": "^2.3.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
-    "@vue/component-compiler-utils": "^2.3.0",
+    "@vue/component-compiler-utils": "^2.3.1",
     "bulma": "^0.7.2",
-    "node-sass": "^4.10.0",
+    "carlo": "^0.9.41",
+    "csv-parse": "^4.1.0",
+    "fs-extra": "^7.0.1",
+    "node-sass": "^4.11.0",
     "parcel-bundler": "^1.10.3",
-    "sass": "^1.15.1",
+    "pkg": "^4.3.5",
+    "sass": "^1.15.2",
     "sass-loader": "^7.1.0",
-    "typescript": "^3.2.1",
+    "sql.js": "^0.5.0",
+    "typescript": "^3.2.2",
+    "vue": "^2.5.21",
+    "vue-hot-reload-api": "^2.3.1",
     "vue-property-decorator": "^7.2.0",
     "vue-router": "^3.0.2",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.21"
   },
-  "bin": "./scripts/carlo.js"
+  "bin": "./scripts/carlo.js",
+  "pkg": {
+    "assets": [
+      "dist/*"
+    ]
+  }
 }
