@@ -3,12 +3,12 @@
     <table class="table is-hoverable is-fullwidth scroll">
       <thead>
         <tr>
-          <th v-for="columnName in columnNames">{{ columnName }}</th>
+          <th v-for="(columnName, i) in columnNames" :key="i">{{ columnName }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="rows in result">
-          <td v-for="str in rows">{{ str }}</td>
+        <tr v-for="(rows, i) in result" :key="i">
+          <td v-for="(str, i) in rows" :key="i">{{ str }}</td>
         </tr>
       </tbody>
     </table>
@@ -25,6 +25,3 @@ export default class ResultTable extends Vue {
   @Prop() private result!: string[]
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

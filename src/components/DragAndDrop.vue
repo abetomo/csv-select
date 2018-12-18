@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { Component } from "vue-property-decorator";
-import parse from "csv-parse/lib/sync"
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
+import parse from 'csv-parse/lib/sync'
 
 @Component
 export default class DragAndDrop extends Vue {
@@ -33,7 +33,7 @@ export default class DragAndDrop extends Vue {
         const columnLength = rows[0].length
         this.$emit('set', rows.filter(row => row.length === columnLength))
         this.loading = false
-      };
+      }
       reader.readAsText(files[0])
     }, 200)
   }
@@ -56,4 +56,3 @@ export default class DragAndDrop extends Vue {
   width: 80%;
 }
 </style>
-

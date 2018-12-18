@@ -12,12 +12,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from "vue-property-decorator";
+import Vue from 'vue'
+import { Component, Prop } from 'vue-property-decorator'
 
 @Component
 export default class ErrorMessage extends Vue {
   @Prop() private message!: string
 }
 </script>
-

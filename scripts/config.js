@@ -4,8 +4,9 @@ const outDir = path.join(__dirname, '../dist')
 const indexFile = 'index.html'
 const entryFile = path.join(__dirname, '../src', indexFile)
 
-module.exports = config = {
+const config = {
   outDir,
   indexFile,
   entryFile
 }
+module.exports = config

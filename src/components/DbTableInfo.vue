@@ -5,13 +5,12 @@
         <thead>
           <tr>
             <th>Column name of CSV</th>
-            <td v-for="name in csvColumnNames">{{ name }}</td>
-          </tr>
+            <td v-for="(name, i) in csvColumnNames" :key="i">{{ name }}</td>
           </tr>
         </thead>
         <tbody>
             <th>Column name of DB</th>
-            <td v-for="name in dbColumnNames">{{ name }}</td>
+            <td v-for="(name, i) in dbColumnNames" :key="i">{{ name }}</td>
         </tbody>
       </table>
     </div>

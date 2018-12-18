@@ -18,13 +18,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from "vue-property-decorator";
-import { Database } from "sql.js"
-import ResultTable from "~/components/ResultTable"
-import DbTableInfo from "~/components/DbTableInfo"
-import DragAndDrop from "~/components/DragAndDrop"
-import ErrorMessage from "~/components/ErrorMessage"
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
+import { Database } from 'sql.js'
+import ResultTable from '~/components/ResultTable'
+import DbTableInfo from '~/components/DbTableInfo'
+import DragAndDrop from '~/components/DragAndDrop'
+import ErrorMessage from '~/components/ErrorMessage'
 
 @Component({
   components: {
@@ -35,20 +35,20 @@ import ErrorMessage from "~/components/ErrorMessage"
   }
 })
 export default class TopPage extends Vue {
-  result: string[][] = [];
-  columnNames: string[] = [];
+  result: string[][] = []
+  columnNames: string[] = []
 
-  dbColumnNames: string[] = [];
-  csvColumnNames: string[] = [];
+  dbColumnNames: string[] = []
+  csvColumnNames: string[] = []
   db: any = new Database();
   sql: string = '';
   errorMessage: string = ''
 
   createTable (columnNames: string[]) {
     const columnsString = columnNames.map((name) => {
-      return `${name} char`;
-    }).join(',');
-    this.db.run(`drop table if exists hoge; create table hoge (${columnsString});`);
+      return `${name} char`
+    }).join(',')
+    this.db.run(`drop table if exists hoge; create table hoge (${columnsString});`)
   }
 
   setCsvData (csvData: string[][]) {
@@ -69,9 +69,9 @@ export default class TopPage extends Vue {
   runSelectQuery () {
     try {
       this.errorMessage = null
-      const result = this.db.exec(this.sql)[0];
-      this.columnNames = result.columns;
-      this.result = result.values;
+      const result = this.db.exec(this.sql)[0]
+      this.columnNames = result.columns
+      this.result = result.values
     } catch (e) {
       this.errorMessage = e.message
     }
