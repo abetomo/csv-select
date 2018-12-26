@@ -1,5 +1,9 @@
 # csv-select
 
+It is a [Calro](https://github.com/GoogleChromeLabs/carlo) application that runs SQL queries against csv data.
+
+## Install
+
 ```
 % git clone https://github.com/abetomo/csv-select.git
 % cd csv-select
@@ -7,7 +11,7 @@
 % npm run dev
 ```
 
-# Demo
+## Demo
 
 ```csv:sample.csv
 date,impressions,clicks,conversions
