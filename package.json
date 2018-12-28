@@ -44,7 +44,9 @@
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.21"
   },
-  "bin": "./scripts/carlo.js",
+  "bin": {
+      "csv-select": "./scripts/carlo.js"
+  },
   "pkg": {
     "assets": [
       "dist/*"
