@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const carlo = require('carlo')
 const Bundler = require('parcel-bundler')
 
