@@ -45,7 +45,7 @@
     "vue-template-compiler": "^2.5.21"
   },
   "bin": {
-      "csv-select": "./scripts/carlo.js"
+    "csv-select": "./scripts/carlo.js"
   },
   "pkg": {
     "assets": [
