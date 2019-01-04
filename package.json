@@ -1,6 +1,6 @@
 {
   "name": "@abetomo/csv-select",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "scripts": {
     "dev": "node --max-old-space-size=4096 ./scripts/dev.js",
