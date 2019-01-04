@@ -48,6 +48,12 @@
   "bin": {
     "csv-select": "./scripts/carlo.js"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist",
+    "package.json"
+  ],
   "pkg": {
     "assets": [
       "dist/*"
