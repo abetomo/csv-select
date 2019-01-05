@@ -58,5 +58,8 @@
     "assets": [
       "dist/*"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
