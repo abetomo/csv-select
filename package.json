@@ -52,7 +52,8 @@
     "LICENSE",
     "README.md",
     "dist",
-    "package.json"
+    "package.json",
+    "scripts"
   ],
   "pkg": {
     "assets": [
