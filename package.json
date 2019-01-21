@@ -2,6 +2,12 @@
   "name": "@abetomo/csv-select",
   "version": "0.0.2",
   "description": "It is a Calro application that runs SQL queries against csv data.",
+  "keywords": [
+    "csv",
+    "sql",
+    "carlo",
+    "sqlite"
+  ],
   "scripts": {
     "dev": "node --max-old-space-size=4096 ./scripts/dev.js",
     "build": "NODE_ENV=production node --max-old-space-size=4096 ./scripts/build.js",
