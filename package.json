@@ -19,7 +19,9 @@
   },
   "author": "abetomo",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "carlo": "^0.9.43"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-decorators": "^7.2.3",
@@ -27,7 +29,6 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@vue/component-compiler-utils": "^2.5.0",
     "bulma": "^0.7.2",
-    "carlo": "^0.9.43",
     "csv-parse": "^4.3.0",
     "eslint": "^5.12.0",
     "eslint-config-standard": "^12.0.0",
