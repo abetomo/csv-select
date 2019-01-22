@@ -1,6 +1,6 @@
 {
   "name": "@abetomo/csv-select",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "It is a Calro application that runs SQL queries against csv data.",
   "keywords": [
     "csv",
