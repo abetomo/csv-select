@@ -29,4 +29,4 @@ date,impressions,clicks,conversions
 2018/9/15,2219.00,828.00,16.00
 ```
 
-![Demo](docs/demo.gif)
+![Demo](https://github.com/abetomo/csv-select/raw/master/docs/demo.gif)
