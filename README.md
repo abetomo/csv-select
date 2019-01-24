@@ -6,6 +6,7 @@ It is a [Calro](https://github.com/GoogleChromeLabs/carlo) application that runs
 
 ```
 % npm i @abetomo/csv-select
+% csv-select
 ```
 
 Or
