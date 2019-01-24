@@ -59,7 +59,6 @@
     "LICENSE",
     "README.md",
     "dist",
-    "docs",
     "package.json",
     "scripts"
   ],
