@@ -1,5 +1,7 @@
 # csv-select
 
+[![npm version](https://badge.fury.io/js/%40abetomo%2Fcsv-select.svg)](https://badge.fury.io/js/%40abetomo%2Fcsv-select)
+
 It is a [Calro](https://github.com/GoogleChromeLabs/carlo) application that runs SQL queries against csv data.
 
 ## Install
