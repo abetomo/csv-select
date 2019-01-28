@@ -15,7 +15,8 @@
     "lint": "eslint --ext .js,.vue src scripts",
     "pkg": "npm run build && pkg . --out-path build/Release",
     "prepare": "npm run build",
-    "test": "echo \"Info: no test specified\" && exit 0"
+    "test": "npm run lint && npm run unit",
+    "unit": "echo \"Info: no test specified\" && exit 0"
   },
   "author": "abetomo",
   "license": "MIT",
