@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "node --max-old-space-size=4096 ./scripts/dev.js",
-    "build": "NODE_ENV=production node --max-old-space-size=4096 ./scripts/build.js",
+    "build": "node --max-old-space-size=4096 ./scripts/build.js",
     "launch": "node ./scripts/carlo.js",
     "lint": "eslint --ext .js,.vue src scripts",
     "pkg": "npm run build && pkg . --out-path build/Release",

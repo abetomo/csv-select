@@ -7,9 +7,15 @@ const config = require('./config')
 
 fs.removeSync(config.outDir)
 
+const isProduction = (() => {
+  // Default is true
+  if (process.env.NODE_ENV == null) return true
+  return process.env.NODE_ENV === 'production'
+})()
+
 const build = async () => {
   const opts = {
-    production: process.env.NODE_ENV === 'production',
+    production: isProduction,
     outDir: config.outDir,
     outFile: config.indexFile,
     sourceMaps: true,
