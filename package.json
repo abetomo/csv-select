@@ -18,8 +18,16 @@
     "test": "npm run lint && npm run unit",
     "unit": "echo \"Info: no test specified\" && exit 0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abetomo/csv-select.git"
+  },
   "author": "abetomo",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abetomo/csv-select/issues"
+  },
+  "homepage": "https://github.com/abetomo/csv-select#readme",
   "dependencies": {
     "carlo": "^0.9.46"
   },
