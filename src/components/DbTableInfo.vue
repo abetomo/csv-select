@@ -28,6 +28,3 @@ export default class DbTableInfo extends Vue {
   @Prop() private csvColumnNames!: string[]
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
