@@ -1,16 +1,18 @@
 const http = require('http')
 const path = require('path')
-const { Nuxt, Builder } = require('nuxt')
 const { app, dialog, ipcMain, BrowserWindow } = require('electron')
 
-const config = require('./nuxt.config.js')
-const nuxt = new Nuxt(config)
-const builder = new Builder(nuxt)
+let config = {}
+try {
+  config = require('./nuxt.config.js')
+} catch {}
 
-config.rootDir = __dirname // for electron-builder
 let NUXT_URL = ''
-
 if (config.dev) {
+  const { Nuxt, Builder } = require('nuxt')
+  const nuxt = new Nuxt(config)
+  const builder = new Builder(nuxt)
+
   builder.build().catch((err) => {
     console.error(err) // eslint-disable-line no-console
     process.exit(1)
