@@ -17,7 +17,10 @@ Or
 % git clone https://github.com/abetomo/csv-select.git
 % cd csv-select
 % npm i
-% npm run dev
+
+% npm run dev  # on browser
+
+% npm run dev-electron  # on electron
 ```
 
 ## Demo
