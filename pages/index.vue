@@ -90,9 +90,9 @@ export default defineComponent({
       const query = `insert into hoge values(${state.dbColumnNames.map(
         (_) => '?'
       )});`
-      csvData.map((row) => {
+      for (const row of csvData) {
         db.run(query, row)
-      })
+      }
       state.columnNames = state.dbColumnNames
     }
 
