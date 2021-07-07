@@ -28,17 +28,18 @@
     "scripts/electron.js"
   ],
   "scripts": {
-    "dev": "nuxt",
-    "dev-electron": "NODE_ENV=dev electron main.js",
+    "dev": "npm run sql-wasm && nuxt",
+    "dev-electron": "npm run sql-wasm && NODE_ENV=dev electron main.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
-    "prepublishOnly": "BASE_DIR=./ npm run generate",
+    "prepublishOnly": "npm run sql-wasm && BASE_DIR=./ npm run generate",
     "test": "npm run lint && npm run unit",
-    "unit": "echo \"Info: no jest test specified\" && exit 0"
+    "unit": "echo \"Info: no jest test specified\" && exit 0",
+    "sql-wasm": "cp node_modules/sql.js/dist/sql-wasm.wasm static/"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -82,7 +83,7 @@
     "nuxt": "^2.15.7",
     "nuxt-buefy": "^0.4.8",
     "prettier": "^2.3.2",
-    "sql.js": "^0.5.0",
+    "sql.js": "^1.5.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",

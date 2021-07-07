@@ -25,16 +25,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from '@vue/composition-api'
-import { Database } from 'sql.js'
+import { defineComponent, reactive, onMounted } from '@vue/composition-api'
+import initSqlJs from 'sql.js'
 import DragAndDrop from '@/components/DragAndDrop.vue'
 import DbTableInfo from '@/components/DbTableInfo.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 import ResultTable from '@/components/ResultTable.vue'
 
-const db = new Database()
-
-const createTable = (columnNames: string[]) => {
+const createTable = (db: any, columnNames: string[]) => {
   const columnsString = columnNames
     .map((name) => {
       return `${name} char`
@@ -68,6 +66,12 @@ export default defineComponent({
       columnNames: [],
     })
 
+    let db: any = null
+    onMounted(async () => {
+      const SQL = await initSqlJs()
+      db = new SQL.Database()
+    })
+
     const runSelectQuery = () => {
       try {
         state.errorMessage = ''
@@ -84,7 +88,7 @@ export default defineComponent({
       state.dbColumnNames = state.csvColumnNames.map((_, i) => {
         return `c${i + 1}`
       })
-      createTable(state.dbColumnNames)
+      createTable(db, state.dbColumnNames)
       state.result = csvData
 
       const query = `insert into hoge values(${state.dbColumnNames.map(
