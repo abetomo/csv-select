@@ -25,6 +25,7 @@
   "files": [
     "dist",
     "main.js",
+    "preload.js",
     "scripts/electron.js"
   ],
   "scripts": {
