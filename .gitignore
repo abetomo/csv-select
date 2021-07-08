@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# sql-wasm.wasm
+static/sql-wasm.wasm
