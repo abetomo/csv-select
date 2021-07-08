@@ -91,3 +91,6 @@ sw.*
 
 # sql-wasm.wasm
 static/sql-wasm.wasm
+
+# electron-bundler
+build

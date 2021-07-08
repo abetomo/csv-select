@@ -31,6 +31,7 @@
   "scripts": {
     "dev": "npm run sql-wasm && nuxt",
     "dev-electron": "npm run sql-wasm && NODE_ENV=dev electron main.js",
+    "electron-builder": "npm run prepublishOnly && electron-builder -w portable -m --x64",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -52,9 +53,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "dependencies": {
-    "electron": "^13.1.6"
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -74,6 +72,8 @@
     "babel-jest": "^27.0.6",
     "core-js": "^3.15.2",
     "csv-parse": "^4.16.0",
+    "electron": "^13.1.6",
+    "electron-builder": "^22.11.7",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
@@ -90,5 +90,17 @@
     "stylelint-config-standard": "^22.0.0",
     "ts-jest": "^27.0.3",
     "vue-jest": "^3.0.7"
+  },
+  "build": {
+    "appId": "@abetomo/csv-select",
+    "productName": "csv-select",
+    "files": [
+      "dist/",
+      "main.js",
+      "preload.js"
+    ],
+    "directories": {
+      "output": "build"
+    }
   }
 }
