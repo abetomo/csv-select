@@ -12,7 +12,6 @@
       <textarea
         v-model="state.sql"
         class="textarea is-info"
-        placeholder="select * from hoge"
       ></textarea>
       <button class="button is-fullwidth is-info" @click="runSelectQuery">
         Run Query
@@ -98,6 +97,7 @@ export default defineComponent({
         db.run(query, row)
       }
       state.columnNames = state.dbColumnNames
+      state.sql = "select * from hoge"
     }
 
     return {
