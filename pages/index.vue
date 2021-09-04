@@ -77,8 +77,10 @@ export default defineComponent({
         const result = db.exec(state.sql)[0]
         state.columnNames = result.columns
         state.result = result.values
-      } catch (e) {
-        state.errorMessage = e.message
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          state.errorMessage = e.message
+        }
       }
     }
 
