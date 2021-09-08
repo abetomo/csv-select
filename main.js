@@ -36,6 +36,7 @@ const newWin = () => {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.resolve(path.join(__dirname, 'preload.js')),
+      nativeWindowOpen: true, // https://github.com/electron/electron/issues/28511
     },
   })
   win.setMenu(null)
