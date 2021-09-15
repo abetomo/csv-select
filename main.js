@@ -2,12 +2,14 @@ const http = require('http')
 const path = require('path')
 const { app, dialog, ipcMain, BrowserWindow } = require('electron')
 
-let config = {}
-try {
-  config = require('./nuxt.config.js')
-} catch {}
+const config = (() => {
+  try {
+    return require('./nuxt.config.js')
+  } catch {}
+  return {}
+})()
 
-let NUXT_URL = ''
+let url = 'file://' + __dirname + '/dist/index.html' // eslint-disable-line no-path-concat
 if (config.dev) {
   const { Nuxt, Builder } = require('nuxt')
   const nuxt = new Nuxt(config)
@@ -19,9 +21,7 @@ if (config.dev) {
   })
   const server = http.createServer(nuxt.render)
   server.listen()
-  NUXT_URL = `http://localhost:${server.address().port}`
-} else {
-  NUXT_URL = 'file://' + __dirname + '/dist/index.html' // eslint-disable-line no-path-concat
+  url = `http://localhost:${server.address().port}`
 }
 
 // Electron
@@ -42,16 +42,16 @@ const newWin = () => {
   win.setMenu(null)
   win.on('closed', () => (win = null))
   if (!config.dev) {
-    win.loadURL(NUXT_URL)
+    win.loadURL(url)
     return
   }
 
   // dev mode
   const pollServer = () => {
     http
-      .get(NUXT_URL, (res) => {
+      .get(url, (res) => {
         if (res.statusCode === 200) {
-          win && win.loadURL(NUXT_URL)
+          win && win.loadURL(url)
         } else {
           setTimeout(pollServer, 300)
         }
