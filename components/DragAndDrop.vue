@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from '@vue/composition-api'
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
 import parse from 'csv-parse/lib/sync'
 
 export default defineComponent({

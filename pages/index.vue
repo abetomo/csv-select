@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, onMounted } from '@vue/composition-api'
+import { defineComponent, reactive, onMounted } from '@nuxtjs/composition-api'
 import initSqlJs from 'sql.js'
 import DragAndDrop from '@/components/DragAndDrop.vue'
 import DbTableInfo from '@/components/DbTableInfo.vue'
