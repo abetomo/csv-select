@@ -31,7 +31,19 @@ export default defineComponent({
       setTimeout(() => {
         const reader = new FileReader()
         reader.onload = (e: any) => {
-          const rows = parse(e.target.result, { skip_empty_lines: true })
+          let rows = []
+          try {
+            rows = parse(e.target.result, { skip_empty_lines: true })
+          } catch (e) {
+            ;(ctx.root as any).$buefy.toast.open({
+              duration: 5000,
+              message: e,
+              position: 'is-bottom',
+              type: 'is-danger'
+            })
+            state.loading = false
+            return
+          }
           const columnLength = rows[0].length
           ctx.emit(
             'set',
