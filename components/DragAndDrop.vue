@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from '@nuxtjs/composition-api'
-import parse from 'csv-parse/lib/sync'
+import { parse } from 'csv-parse/lib/sync'
 
 export default defineComponent({
   setup(_, ctx) {
