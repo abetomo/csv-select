@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const path = require('path')
-const { execSync } = require('child_process')
+const { execFileSync } = require('child_process')
 
-execSync(`npx electron ${path.join(__dirname, '../main.js')}`)
+const cmd = 'npx'
+const args = ['electron', path.join(__dirname, '../main.js')]
+execFileSync(cmd, args)
