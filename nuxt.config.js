@@ -1,5 +1,8 @@
+import { defineNuxtConfig } from '@nuxt/bridge'
+
 const baseDir = process.env.BASE_DIR || '/'
-module.exports = { // eslint-disable-line
+
+export default defineNuxtConfig({
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
@@ -28,11 +31,8 @@ module.exports = { // eslint-disable-line
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/composition-api/module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -57,4 +57,4 @@ module.exports = { // eslint-disable-line
   },
   // telemetry#opting-out
   telemetry: false,
-}
+})
