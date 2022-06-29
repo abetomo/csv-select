@@ -1,3 +1,17 @@
+<script lang="ts" setup>
+const props = defineProps({
+  columnNames: {
+    type: Array,
+    required: true,
+  },
+
+  result: {
+    type: Array,
+    required: true,
+  },
+})
+</script>
+
 <template>
   <div class="scroll">
     <table class="table is-hoverable is-fullwidth scroll">
@@ -16,23 +30,3 @@
     </table>
   </div>
 </template>
-
-<script lang="ts">
-export default defineComponent({
-  props: {
-    columnNames: {
-      type: Array,
-      required: true,
-    },
-
-    result: {
-      type: Array,
-      required: true,
-    },
-  },
-
-  setup(props: { columnNames: string[]; result: string[][] }) {
-    return { props }
-  },
-})
-</script>

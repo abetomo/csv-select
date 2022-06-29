@@ -1,3 +1,17 @@
+<script lang="ts" setup>
+const props = defineProps({
+  dbColumnNames: {
+    type: Array,
+    required: true,
+  },
+
+  csvColumnNames: {
+    type: Array,
+    required: true,
+  }
+})
+</script>
+
 <template>
   <div v-show="props.dbColumnNames.length > 0" class="has-text-centered">
     <div class="scroll">
@@ -19,23 +33,3 @@
     <p>TableName: <strong>hoge</strong></p>
   </div>
 </template>
-
-<script lang="ts">
-export default defineComponent({
-  props: {
-    dbColumnNames: {
-      type: Array,
-      required: true,
-    },
-
-    csvColumnNames: {
-      type: Array,
-      required: true,
-    },
-  },
-
-  setup(props: { dbColumnNames: string[]; csvColumnNames: string[] }) {
-    return { props }
-  },
-})
-</script>

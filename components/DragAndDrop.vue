@@ -1,3 +1,48 @@
+<script lang="ts" setup>
+import { parse } from 'csv-parse/lib/sync'
+import { useContext } from '@nuxtjs/composition-api'
+
+const state = reactive<{
+  loading: boolean
+}>({
+  loading: false,
+})
+
+const { root } = useContext()
+const emit = defineEmits(['set'])
+const onDrop = (event: any) => {
+  state.loading = true
+  const files = event.dataTransfer.files
+  setTimeout(() => {
+    const reader = new FileReader()
+    reader.onload = (e: any) => {
+      let rows = []
+      try {
+        rows = parse(e.target.result, { skip_empty_lines: true })
+      } catch (e) {
+        ;(root as any).$buefy.toast.open({
+          duration: 5000,
+          message: e,
+          position: 'is-bottom',
+          type: 'is-danger'
+        })
+        state.loading = false
+        return
+      }
+      const columnLength = rows[0].length
+      emit(
+        'set',
+        rows.filter((row: string[]) => row.length === columnLength)
+      )
+      state.loading = false
+    }
+    reader.readAsText(files[0])
+  }, 200)
+}
+
+const { loading } = toRefs(state)
+</script>
+
 <template>
   <div
     class="drop-area"
@@ -6,61 +51,12 @@
     @drop.prevent="onDrop"
   >
     <p>Drag and drop file</p>
-    <div class="modal" :class="{ 'is-active': state.loading }">
+    <div class="modal" :class="{ 'is-active': loading }">
       <div class="modal-background"></div>
       <div class="modal-content">Loading...</div>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { parse } from 'csv-parse/lib/sync'
-
-export default defineComponent({
-  setup(_, ctx) {
-    const state = reactive<{
-      loading: boolean
-    }>({
-      loading: false,
-    })
-
-    const onDrop = (event: any) => {
-      state.loading = true
-      const files = event.dataTransfer.files
-      setTimeout(() => {
-        const reader = new FileReader()
-        reader.onload = (e: any) => {
-          let rows = []
-          try {
-            rows = parse(e.target.result, { skip_empty_lines: true })
-          } catch (e) {
-            ;(ctx.root as any).$buefy.toast.open({
-              duration: 5000,
-              message: e,
-              position: 'is-bottom',
-              type: 'is-danger'
-            })
-            state.loading = false
-            return
-          }
-          const columnLength = rows[0].length
-          ctx.emit(
-            'set',
-            rows.filter((row: string[]) => row.length === columnLength)
-          )
-          state.loading = false
-        }
-        reader.readAsText(files[0])
-      }, 200)
-    }
-
-    return {
-      state,
-      onDrop,
-    }
-  },
-})
-</script>
 
 <style scoped>
 .drop-area {
