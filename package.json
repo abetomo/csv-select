@@ -53,14 +53,14 @@
     }
   },
   "dependencies": {
-    "electron": "^19.0.0"
+    "electron": "^19.0.6"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27566698.2b0045e",
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config": "^10.0.0",
@@ -69,25 +69,25 @@
     "@nuxtjs/stylelint-module": "^4.1.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^28.1.0",
-    "core-js": "^3.22.4",
-    "csv-parse": "^5.0.4",
-    "eslint": "^8.15.0",
+    "babel-jest": "^28.1.1",
+    "core-js": "^3.23.3",
+    "csv-parse": "^5.2.0",
+    "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^4.1.0",
     "husky": "^8.0.0",
-    "jest": "^28.1.0",
-    "lint-staged": "^12.4.1",
-    "nuxt-buefy": "^0.4.22",
+    "jest": "^28.1.1",
+    "lint-staged": "^13.0.3",
+    "nuxt-buefy": "^0.4.23",
     "nuxt-edge": "latest",
     "postcss-html": "^1.4.1",
-    "prettier": "^2.6.2",
-    "sql.js": "^1.6.2",
-    "stylelint": "^14.8.2",
+    "prettier": "^2.7.1",
+    "sql.js": "^1.7.0",
+    "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^25.0.0",
-    "ts-jest": "^28.0.2",
+    "stylelint-config-standard": "^26.0.0",
+    "ts-jest": "^28.0.5",
     "vue-jest": "^3.0.7"
   }
 }
