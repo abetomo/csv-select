@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { parse } from 'csv-parse/lib/sync'
-import { useContext } from '@nuxtjs/composition-api'
 
 const state = reactive<{
   loading: boolean
@@ -8,7 +7,7 @@ const state = reactive<{
   loading: false,
 })
 
-const { root } = useContext()
+const { root } = useNuxtApp()
 const emit = defineEmits(['set'])
 const onDrop = (event: any) => {
   state.loading = true
