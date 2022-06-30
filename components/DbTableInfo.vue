@@ -1,15 +1,9 @@
 <script lang="ts" setup>
-const props = defineProps({
-  dbColumnNames: {
-    type: Array,
-    required: true,
-  },
-
-  csvColumnNames: {
-    type: Array,
-    required: true,
-  }
-})
+interface Props {
+  dbColumnNames: string[]
+  csvColumnNames: string[]
+}
+const props = defineProps<Props>()
 </script>
 
 <template>
