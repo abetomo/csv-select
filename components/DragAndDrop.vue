@@ -1,6 +1,11 @@
 <script lang="ts" setup>
 import { parse } from 'csv-parse/lib/sync'
 
+interface Emits {
+  (e: 'set', value: string[][]): void;
+}
+const emit = defineEmits<Emits>()
+
 const state = reactive<{
   loading: boolean
 }>({
@@ -8,7 +13,6 @@ const state = reactive<{
 })
 
 const { root } = useNuxtApp()
-const emit = defineEmits(['set'])
 const onDrop = (event: any) => {
   state.loading = true
   const files = event.dataTransfer.files
