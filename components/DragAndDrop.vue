@@ -23,7 +23,7 @@ const onDrop = (event: any) => {
       try {
         rows = parse(e.target.result, { skip_empty_lines: true })
       } catch (e) {
-        ;(root as any).$buefy.toast.open({
+        root.$buefy.toast.open({
           duration: 5000,
           message: e,
           position: 'is-bottom',
