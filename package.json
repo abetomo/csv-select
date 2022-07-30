@@ -31,7 +31,6 @@
   "scripts": {
     "dev": "npm run sql-wasm && nuxi dev",
     "dev-electron": "npm run sql-wasm && NODE_ENV=dev electron main.js",
-    "build": "nuxi build",
     "start": "nuxi preview",
     "generate": "nuxi generate",
     "lint:js": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
