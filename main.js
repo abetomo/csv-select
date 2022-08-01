@@ -9,7 +9,7 @@ const config = (() => {
   return {}
 })()
 
-let url = 'file://' + __dirname + '/dist/index.html' // eslint-disable-line no-path-concat
+let url = 'file://' + __dirname + '/.output/public/index.html' // eslint-disable-line no-path-concat
 if (config.dev) {
   const { Nuxt, Builder } = require('nuxt')
   const nuxt = new Nuxt(config)
