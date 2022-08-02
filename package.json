@@ -38,6 +38,7 @@
     "lint": "npm run lint:js && npm run lint:style",
     "prepublishOnly": "npm run sql-wasm && BASE_DIR=./ npm run generate",
     "test": "npm run lint && npm run unit",
+    "tsc": "nuxi typecheck",
     "unit": "echo \"Info: no jest test specified\" && exit 0",
     "sql-wasm": "cp node_modules/sql.js/dist/sql-wasm.wasm static/"
   },
@@ -87,6 +88,7 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^26.0.0",
     "ts-jest": "^28.0.5",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^3.0.7",
+    "vue-tsc": "^0.39.4"
   }
 }
