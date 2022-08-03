@@ -37,7 +37,7 @@
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
     "prepublishOnly": "npm run sql-wasm && BASE_DIR=./ npm run generate",
-    "test": "npm run lint && npm run unit",
+    "test": "npm run lint && npm run tsc && npm run unit",
     "tsc": "nuxi typecheck",
     "unit": "echo \"Info: no jest test specified\" && exit 0",
     "sql-wasm": "cp node_modules/sql.js/dist/sql-wasm.wasm static/"
