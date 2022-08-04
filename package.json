@@ -53,7 +53,7 @@
     }
   },
   "dependencies": {
-    "electron": "^19.0.6"
+    "electron": "^20.0.1"
   },
   "publishConfig": {
     "access": "public"
