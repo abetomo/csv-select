@@ -2,26 +2,19 @@ const http = require('http')
 const path = require('path')
 const { app, dialog, ipcMain, BrowserWindow } = require('electron')
 
-const config = (() => {
-  try {
-    return require('./nuxt.config.js')
-  } catch {}
-  return {}
-})()
+const isDev = process.env.NODE_ENV === 'dev'
 
-let url = 'file://' + __dirname + '/.output/public/index.html' // eslint-disable-line no-path-concat
-if (config.dev) {
-  const { Nuxt, Builder } = require('nuxt')
-  const nuxt = new Nuxt(config)
-  const builder = new Builder(nuxt)
-
-  builder.build().catch((err) => {
-    console.error(err) // eslint-disable-line no-console
-    process.exit(1)
-  })
-  const server = http.createServer(nuxt.render)
-  server.listen()
-  url = `http://localhost:${server.address().port}`
+let url = null
+if (isDev) {
+  const { loadNuxt, build } = require('nuxt-edge')
+  ;(async () => {
+    const nuxt = await loadNuxt('dev')
+    await build(nuxt)
+    const server = await nuxt.server.listen()
+    url = server.url
+  })()
+} else {
+  url = 'file://' + __dirname + '/.output/public/index.html' // eslint-disable-line no-path-concat
 }
 
 // Electron
@@ -39,7 +32,7 @@ const newWin = () => {
   })
   win.setMenu(null)
   win.on('closed', () => (win = null))
-  if (!config.dev) {
+  if (!isDev) {
     win.loadURL(url)
     return
   }
