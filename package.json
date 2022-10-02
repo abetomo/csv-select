@@ -69,7 +69,7 @@
     "@nuxtjs/stylelint-module": "^4.1.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^28.1.1",
+    "babel-jest": "^29.1.2",
     "core-js": "^3.23.3",
     "csv-parse": "^5.2.0",
     "eslint": "^8.18.0",
