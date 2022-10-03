@@ -83,7 +83,7 @@
     "nuxt-edge": "latest",
     "postcss-html": "^1.4.1",
     "prettier": "^2.7.1",
-    "sql.js": "^1.7.0",
+    "sql.js": "^1.8.0",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^26.0.0",
