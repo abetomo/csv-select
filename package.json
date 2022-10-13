@@ -63,7 +63,7 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27566698.2b0045e",
     "@nuxt/types": "^2.15.8",
-    "@nuxtjs/eslint-config": "^10.0.0",
+    "@nuxtjs/eslint-config": "^11.0.0",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "@nuxtjs/stylelint-module": "^4.1.0",
