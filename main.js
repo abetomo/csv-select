@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
+
 const http = require('http')
 const path = require('path')
 const { app, dialog, ipcMain, BrowserWindow } = require('electron')
@@ -14,7 +16,7 @@ if (isDev) {
     url = server.url
   })()
 } else {
-  url = 'file://' + __dirname + '/.output/public/index.html' // eslint-disable-line no-path-concat
+  url = 'file://' + __dirname + '/.output/public/index.html'
 }
 
 // Electron

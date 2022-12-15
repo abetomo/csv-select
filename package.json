@@ -64,14 +64,14 @@
     "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27566698.2b0045e",
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config": "^12.0.0",
-    "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "@nuxtjs/stylelint-module": "^4.1.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.3.0",
     "core-js": "^3.26.1",
-    "csv-parse": "^5.3.2",
+    "csv-parse": "^5.3.3",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^4.0.0",
@@ -82,13 +82,13 @@
     "nuxt-buefy": "^0.4.23",
     "nuxt-edge": "^2.16.0-27720022.54e852f",
     "postcss-html": "^1.4.1",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "sql.js": "^1.8.0",
-    "stylelint": "^14.15.0",
+    "stylelint": "^14.16.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",
     "ts-jest": "^29.0.3",
     "vue-jest": "^3.0.7",
-    "vue-tsc": "^1.0.9"
+    "vue-tsc": "^1.0.13"
   }
 }
