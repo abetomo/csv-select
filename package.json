@@ -53,7 +53,7 @@
     }
   },
   "dependencies": {
-    "electron": "^22.0.2"
+    "electron": "^23.0.0"
   },
   "publishConfig": {
     "access": "public"
@@ -70,9 +70,9 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.3.0",
-    "core-js": "^3.27.1",
+    "core-js": "^3.28.0",
     "csv-parse": "^5.3.3",
-    "eslint": "^8.31.0",
+    "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.1.0",
@@ -82,12 +82,12 @@
     "nuxt-buefy": "^0.4.23",
     "nuxt-edge": "^2.16.0-27720022.54e852f",
     "postcss-html": "^1.4.1",
-    "prettier": "^2.8.2",
+    "prettier": "^2.8.4",
     "sql.js": "^1.8.0",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",
-    "ts-jest": "^29.0.3",
+    "ts-jest": "^29.0.5",
     "vue-jest": "^3.0.7",
     "vue-tsc": "^1.0.24"
   }
