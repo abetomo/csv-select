@@ -85,7 +85,7 @@
     "prettier": "^2.8.4",
     "sql.js": "^1.8.0",
     "stylelint": "^15.3.0",
-    "stylelint-config-standard": "^31.0.0",
+    "stylelint-config-standard": "^32.0.0",
     "ts-jest": "^29.0.5",
     "vue-jest": "^3.0.7",
     "vue-tsc": "^1.1.5"
