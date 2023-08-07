@@ -82,7 +82,7 @@
     "nuxt-buefy": "^0.4.23",
     "nuxt-edge": "^2.16.0-27720022.54e852f",
     "postcss-html": "^1.4.1",
-    "prettier": "^2.8.4",
+    "prettier": "^3.0.1",
     "sql.js": "^1.8.0",
     "stylelint": "^15.5.0",
     "stylelint-config-standard": "^32.0.0",
