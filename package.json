@@ -59,7 +59,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.1",
+    "@commitlint/cli": "^18.4.1",
     "@commitlint/config-conventional": "^17.4.0",
     "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27566698.2b0045e",
     "@nuxt/types": "^2.16.0",
