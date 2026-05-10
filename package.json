@@ -89,5 +89,8 @@
     "ts-jest": "^29.1.0",
     "vue-jest": "^3.0.7",
     "vue-tsc": "^1.1.5"
+  },
+  "overrides": {
+    "deasync": "0.1.31"
   }
 }
